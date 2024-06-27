@@ -10,7 +10,7 @@ class Book(models.Model):
 class Character(models.Model):
     name = models.CharField(max_length=100)
     date_added = models.DateField(auto_now_add=True)
-    characterBook = models.ForeignKey(Book, on_delete=models.CASCADE)
+    character_book = models.ForeignKey(Book, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.name
