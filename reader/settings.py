@@ -81,7 +81,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'reader_database', #change it databasename
         'USER': 'matthewsteinkamp', #change it database user name
-        'PASSWORD': '', # change user database password
+        'PASSWORD': '1234', # change user database password
         'HOST': 'localhost',  
         'PORT': '5432',           
     }
