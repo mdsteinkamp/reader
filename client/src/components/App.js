@@ -5,7 +5,7 @@ export default function App() {
   const [books, setBooks] = useState([])
 
   useEffect(() => {
-    fetch("http://localhost:8000/books")
+    fetch("http://localhost:8000/api/books")
     .then(resp => resp.json())
     .then(books => setBooks(books))
   }, [])
