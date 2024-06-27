@@ -132,7 +132,7 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-#Whitelisting localhost:3000 port for React
+#Whitelisting localhost:4000 port for React
 CORS_ORIGIN_WHITELIST = (
-    'http://localhost:3000'
+    'http://localhost:4000',
 )
