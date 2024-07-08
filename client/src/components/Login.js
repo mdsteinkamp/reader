@@ -12,9 +12,23 @@ export default function Login() {
     })
   }
 
-  function handleSubmit(e) {
+  console.log(formData)
+
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    console.log(formData)
+    try {
+      const response = await fetch('http://127.0.0.1:8000//api/users', {
+        method: "POST",
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+      const user = await response.json()
+      console.log(user)
+    } catch(e) {
+      console.log(e)
+    }
   }
 
   return (
