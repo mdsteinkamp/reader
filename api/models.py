@@ -10,7 +10,7 @@ class User(models.Model):
 class Book(models.Model):
     title = models.CharField(max_length=100)
     date_added = models.DateField(auto_now_add=True)
-    user = models.ForeignKey(User, on_delete=models.CASCADE, default=1)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
 
     def __str__(self) -> str:
         return self.title
