@@ -4,7 +4,7 @@ export default function BookPage({ book }) {
 
   return (
     <div>
-      <p>here is a bookpage comp</p>
+      <h3>Title</h3>
       <p>{book.title}</p>
     </div>
   )
