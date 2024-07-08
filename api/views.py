@@ -1,7 +1,11 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import BookSerializer, CharacterSerializer
-from .models import Book, Character
+from .serializers import UserSerializer, BookSerializer, CharacterSerializer
+from .models import User, Book, Character
+
+class UserView(viewsets.ModelViewSet):
+    serializer_class: UserSerializer
+    queryset = User.objects.all()
 
 class BookView(viewsets.ModelViewSet):
     serializer_class = BookSerializer
