@@ -4,6 +4,8 @@ export default function BookList() {
 
 
   return (
-    <p>booklist here</p>
+    <div className="App">
+      <p>booklist here</p>
+    </div>
   )
 }
