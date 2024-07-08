@@ -1,9 +1,10 @@
 import { useState, useEffect } from 'react'
 import { Route, Routes } from "react-router-dom"
 import '../App.css';
-import NavBar from './NavBar';
-import Home from './Home';
-import BookList from './BookList';
+import NavBar from './NavBar'
+import Home from './Home'
+import Login from './Login'
+import BookList from './BookList'
 
 export default function App() {
   const [books, setBooks] = useState([])
@@ -33,6 +34,7 @@ export default function App() {
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/books" element={<BookList books={books} />} />
       </Routes>
     </div>
