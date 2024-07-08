@@ -1,5 +1,9 @@
 import { useState, useEffect } from 'react'
+import { Route, Routes } from "react-router-dom"
 import '../App.css';
+import NavBar from './NavBar';
+import Home from './Home';
+import BookList from './BookList';
 
 export default function App() {
   const [books, setBooks] = useState([])
@@ -27,12 +31,11 @@ export default function App() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Lets go!
-        </p>
-
-      </header>
+      <NavBar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/books" element={<BookList />} />
+      </Routes>
     </div>
   );
 }
