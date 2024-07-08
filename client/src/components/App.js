@@ -27,14 +27,13 @@ export default function App() {
     fetchBooks()
   }, [])
 
-  console.log(books)
 
   return (
     <div className="App">
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/books" element={<BookList />} />
+        <Route path="/books" element={<BookList books={books} />} />
       </Routes>
     </div>
   );
