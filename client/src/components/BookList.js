@@ -2,6 +2,8 @@ import BookPage from "./BookPage"
 
 export default function BookList({ books }) {
 
+  console.log(books)
+
   return (
     <div className="App">
       <p>booklist here</p>

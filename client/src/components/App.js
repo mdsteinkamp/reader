@@ -15,18 +15,18 @@ export default function App() {
   //   .then(books => setBooks(books))
   // }, [])
 
-  useEffect(() => {
-    const fetchBooks = async () => {
-      try {
-        const response = await fetch("http://127.0.0.1:8000//api/books")
-        const books = await response.json()
-        setBooks(books)
-      } catch (err) {
-        console.log('Error occured when fetching books');
-      }
-    }
-    fetchBooks()
-  }, [])
+  // useEffect(() => {
+  //   const fetchBooks = async () => {
+  //     try {
+  //       const response = await fetch("http://127.0.0.1:8000//api/books")
+  //       const books = await response.json()
+  //       setBooks(books)
+  //     } catch (err) {
+  //       console.log('Error occured when fetching books');
+  //     }
+  //   }
+  //   fetchBooks()
+  // }, [])
 
 
   return (
