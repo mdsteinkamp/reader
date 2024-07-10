@@ -22,13 +22,13 @@ def get_csrf(request):
 def login_view(request):
     data = json.loads(request.body)
     print(data)
+    print(User.objects.all().first())
     username = data.get('username')
 
     if username is None:
         return JsonResponse({'detail': 'Please provide username and password.'}, status=400)
     
     user = authenticate(username=username)
-    print(user)
 
     if user is None:
         return JsonResponse({'detail': 'Invalid credentials.'}, status=400)

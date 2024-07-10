@@ -1,6 +1,16 @@
 from django.urls import path
+from . import views
+from rest_framework import routers
+
 
 from . import views
+
+app_name = "reader"
+router = routers.DefaultRouter()
+router.register('users', views.UserView, 'user')
+router.register('books', views.BookView, 'book')
+router.register('characters', views.CharacterView, 'character')
+
 
 urlpatterns = [
     path('csrf/', views.get_csrf, name='api-csrf'),

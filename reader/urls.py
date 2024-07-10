@@ -21,7 +21,9 @@ from api import views
 from rest_framework import routers
 
 router = routers.DefaultRouter()
+router.register('users', views.UserView, 'user')
 router.register('books', views.BookView, 'book')
+router.register('characters', views.CharacterView, 'character')
 
 urlpatterns = [
     path("admin/", admin.site.urls),

@@ -10,7 +10,7 @@ export default function Login() {
   useEffect(() => {
     const getSession = async () => {
       try {
-        const response = await fetch("http://127.0.0.1:8000//api/session/", {
+        const response = await fetch("http://127.0.0.1:8000/api/session/", {
           credentials: 'include',
         })
         const data = await response.json()
@@ -30,7 +30,7 @@ export default function Login() {
   }, [])
 
   function getCSRF() {
-    fetch("http://127.0.0.1:8000//api/csrf/", {
+    fetch("http://127.0.0.1:8000/api/csrf/", {
       credentials: 'include',
     })
     .then(res => {
@@ -43,7 +43,7 @@ export default function Login() {
   }
 
   function whoami() {
-    fetch("http://127.0.0.1:8000//api/whoami/", {
+    fetch("http://127.0.0.1:8000/api/whoami/", {
       headers: {
         "Content-Type": "application/json",
       },
@@ -56,7 +56,7 @@ export default function Login() {
   }
 
   function handleLogout() {
-    fetch("http://127.0.0.1:8000//api/logout/", {
+    fetch("http://127.0.0.1:8000/api/logout/", {
       credentials: "include",
     })
     .then(data => {
@@ -79,7 +79,7 @@ export default function Login() {
     e.preventDefault()
     try {
       console.log(csrf)
-      const response = await fetch('http://127.0.0.1:8000//api/login/', {
+      const response = await fetch('http://127.0.0.1:8000/api/login/', {
         method: "POST",
         headers: {
           'Content-Type': 'application/json',
@@ -105,6 +105,13 @@ export default function Login() {
             name="username"
             placeholder="Username"
             value={formData.username}
+            onChange={handleChange}
+          />
+          <input
+            type="text"
+            name="password"
+            placeholder="Password"
+            value={formData.password}
             onChange={handleChange}
           />
           <button>Sign In</button>
