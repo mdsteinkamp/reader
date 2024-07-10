@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react"
 
 export default function Login() {
-  const [formData, setFormData] = useState({username: ""})
+  const [formData, setFormData] = useState({username: "", password: ""})
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [csrf, setCsrf] = useState('')
 
