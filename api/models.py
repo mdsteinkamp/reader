@@ -2,6 +2,7 @@ from django.db import models
 
 class User(models.Model):
     username = models.CharField(max_length=25)
+    password = models.CharField(max_length=50)
     date_added = models.DateField(auto_now_add=True)
 
     def __str__(self) -> str:

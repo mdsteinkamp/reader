@@ -24,11 +24,12 @@ def login_view(request):
     print(data)
     print(User.objects.all().first())
     username = data.get('username')
+    password = data.get('password')
 
-    if username is None:
+    if username is None or password is None:
         return JsonResponse({'detail': 'Please provide username and password.'}, status=400)
     
-    user = authenticate(username=username)
+    user = authenticate(username=username, password=password)
 
     if user is None:
         return JsonResponse({'detail': 'Invalid credentials.'}, status=400)
