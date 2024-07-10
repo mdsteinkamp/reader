@@ -5,6 +5,8 @@ export default function Login() {
   const [isAuthenticated, setIsAuthenticated] = useState(false)
   const [csrf, setCsrf] = useState('')
 
+  console.log(isAuthenticated)
+
   useEffect(() => {
     const getSession = async () => {
       try {
@@ -35,7 +37,7 @@ export default function Login() {
       console.log(res)
       let csrfToken = res.headers.get("X-CSRFToken")
       setCsrf(csrfToken)
-      console.log(csrf, csrfToken)
+      // console.log(csrf, csrfToken)
     })
     .catch(e => console.log(e))
   }
@@ -74,9 +76,9 @@ export default function Login() {
   console.log(formData)
 
   const handleLogin = async (e) => {
-    console.log(csrf)
     e.preventDefault()
     try {
+      console.log(csrf)
       const response = await fetch('http://127.0.0.1:8000//api/login/', {
         method: "POST",
         headers: {
@@ -88,8 +90,8 @@ export default function Login() {
       })
       const user = await response.json()
       console.log(user)
-    } catch(e) {
-      console.log(e)
+    } catch(err) {
+      console.log(err)
     }
   }
 
